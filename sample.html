@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <title>轮播</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+        ul,li {list-style: none;}
+        ul::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        li {float: left;}
+
+        .carousel{
+            position: relative;
+            margin: 100px auto;
+            width: 500px;
+            overflow: hidden;
+        }
+        .button {
+            position: absolute;
+            display: block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            padding: 5px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            font-size: 30px;
+            color: #fff;
+            top: 50%;
+            transform: translate(0,-50%);
+            cursor: pointer;
+        }
+        .button.pre {
+            left: 10px;
+        }
+        .button.next {
+            right: 10px;
+        }
+        .imgCt {width:2000px;}
+        .bullet {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            bottom: 30px;
+        }
+        .bullet>li {
+            height: 4px;
+            width: 28px;
+            margin-left: 10px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+        }
+        li.active {
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <ul class="imgCt">
+            <li><a href="#"><img src="https://picsum.photos/500/400/?image=12" alt=""></a></li>
+            <li><a href="#"><img src="https://picsum.photos/500/400/?image=13" alt=""></a></li>
+            <li><a href="#"><img src="https://picsum.photos/500/400/?image=14" alt=""></a></li>
+            <li><a href="#"><img src="https://picsum.photos/500/400/?image=15" alt=""></a></li>
+        </ul>
+        <a class="pre button"><</a>
+        <a class="next button">></a>
+        <ul class="bullet">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script src="carousel.js"></script>   
+</body>
+</html>
